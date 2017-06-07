@@ -27,8 +27,8 @@ export function lazy<T>(array: T[]) {
         }
         return array[key as any]
       },
-      has(_, key: number) {
-        return key in processed
+      has(array, index: number) {
+        return array.length > index
       },
       set() {
         return false

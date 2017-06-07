@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run lint && tsc",
     "clean": "rm -f *.js *.map *.d.ts",
     "lint": "tslint .",
-    "pretest": "build",
+    "pretest": "npm run build",
     "tdd": "concurrently -k 'tsc -w' 'ava -w'",
     "test": "ava"
   },

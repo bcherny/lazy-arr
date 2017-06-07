@@ -4,7 +4,8 @@
   "description": "Arrays that look just like regular JavaScript arrays, but are computed lazily",
   "main": "index.js",
   "scripts": {
-    "build": "npm run lint && tsc",
+    "build": "npm run clean && npm run lint && tsc",
+    "clean": "rm -f *.js *.map *.d.ts",
     "lint": "tslint .",
     "pretest": "build",
     "tdd": "concurrently -k 'tsc -w' 'ava -w'",

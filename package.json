@@ -36,5 +36,8 @@
     "concurrently": "^3.4.0",
     "tslint": "^5.4.3",
     "typescript": "^2.3.4"
+  },
+  "engines": {
+    "node": ">= 6.0"
   }
 }

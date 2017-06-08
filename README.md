@@ -12,11 +12,37 @@
 npm i lazy-arr -S
 ```
 
-## Example
+## Usage
+
+Lazy-arr supports 2 usage patterns:
+
+1. Call it with just a generator function:
+
+  ```js
+  import { lazy } from 'lazy-arr'
+  lazy(index => index + 1)
+  ```
+
+2. Call it with a generator function and an initial value:
+
+  ```js
+  import { lazy } from 'lazy-arr'
+  let seq = lazy([0])(index => index + seq[index - 1])
+  ```
+
+*Note: When I use the word "generator", I mean a regular function that takes an array index and returns a value. I don't mean an [ES2015 generator function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function*).*
+
+## Examples
 
 ```js
 import { lazy } from 'lazy-arr'
 
+// even numbers
+let numbers = lazy(_ => _ * 2)
+numbers[0] // 0
+numbers[5] // 10
+
+// fibonacci numbers (with initial value of [0, 1])
 let fibs = lazy([0, 1])(_ => fibs[_ - 1] + fibs[_ - 2])
 
 fibs[0]  // 0

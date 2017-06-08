@@ -1,11 +1,25 @@
+export function lazy<T>(array: T[]): (fn: Fn<T>) => T[]
+export function lazy<T>(fn: Fn<T>): T[]
+
 /**
  * Returns an array that look just like a regular JavaScript array, but is computed lazily.
  *
- * @param array Initial value
+ * @param array (Optional) Initial value
  * @param fn Function that takes a numerical index, and returns a value
  */
-export function lazy<T>(array: T[]) {
-  return (fn: (index: number) => T) => {
+export function lazy<T>(arg: T[] | Fn<T>) {
+
+  if (Array.isArray(arg)) {
+    return lazyInternal(arg)
+  }
+
+  return lazyInternal<T>([])(arg)
+}
+
+export type Fn<T> = (index: number) => T
+
+function lazyInternal<T>(array: T[]) {
+  return (fn: Fn<T>) => {
     const processed: { [index: string]: true } = {}
 
     for (let n = 0; n < array.length; n++) {

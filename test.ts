@@ -6,6 +6,11 @@ test('it gives an array', t => {
   t.is(fibs.length, 2)
 })
 
+test('it support shorthand syntax', t => {
+  const evens = lazy(_ => _ * 2)
+  t.is(evens[5], 10)
+})
+
 test('it lazy-computes values', t => {
   const fibs = lazy([0, 1])(_ => fibs[_ - 1] + fibs[_ - 2])
   t.is(fibs[10], 55)

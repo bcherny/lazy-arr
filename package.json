@@ -1,6 +1,6 @@
 {
   "name": "lazy-arr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Arrays that look just like regular JavaScript arrays, but are computed lazily",
   "main": "index.js",
   "scripts": {

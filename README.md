@@ -4,7 +4,7 @@
 [npm]: https://img.shields.io/npm/v/lazy-arr.svg?style=flat-square
 [mit]: https://img.shields.io/npm/l/lazy-arr.svg?style=flat-square
 
-> Arrays that look just like regular JavaScript arrays, but are computed lazily. Like Scala or Haskell's lazy streams (see https://stackoverflow.com/a/44333876/435124).
+> Arrays that look just like regular JavaScript arrays, but are computed lazily. Like Scala or Haskell's lazy streams. Read more about it in the introductory blog post: https://performancejs.com/post/ewffd34/Introducing:-Lazy-arrays-in-JavaScript.
 
 ## Install
 

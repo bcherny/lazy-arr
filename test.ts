@@ -14,11 +14,6 @@ test('it support shorthand syntax', t => {
 test('it lazy-computes values', t => {
   const fibs = lazy([0, 1])(_ => fibs[_ - 1] + fibs[_ - 2])
   t.is(fibs[10], 55)
-})
-
-test('it lazy-computes values', t => {
-  const fibs = lazy([0, 1])(_ => fibs[_ - 1] + fibs[_ - 2])
-  t.is(fibs[10], 55)
   t.is(fibs.length, 11)
 })
 
